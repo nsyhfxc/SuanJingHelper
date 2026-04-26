@@ -105,6 +105,8 @@ class StressRunner:
             return [str(exe)]
 
         if suffix == ".py":
+            if getattr(sys, "frozen", False):
+                return [sys.executable, "--run-python-script", str(path)]
             return [sys.executable, str(path)]
 
         return [str(path)]

@@ -1,11 +1,15 @@
 from __future__ import annotations
 
 from pathlib import Path
+import sys
 
 APP_NAME = "算法竞赛调试助手"
 APP_VERSION = "1.1"
 
-APP_ROOT = Path(__file__).resolve().parent.parent
+if getattr(sys, "frozen", False):
+    APP_ROOT = Path(sys.executable).resolve().parent
+else:
+    APP_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = APP_ROOT / "data"
 WORKSPACE_DIR = APP_ROOT / "workspace"
 EXAMPLES_DIR = APP_ROOT / "examples"
