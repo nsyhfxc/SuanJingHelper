@@ -1,0 +1,6 @@
+{
+    "快读快写 (Python)": "import sys\ninput = lambda: sys.stdin.readline().rstrip()\n# write = sys.stdout.write",
+    "并查集 (DSU)": "class DSU:\n    def __init__(self, n):\n        self.parent = list(range(n + 1))\n    def find(self, i):\n        if self.parent[i] == i: return i\n        self.parent[i] = self.find(self.parent[i])\n        return self.parent[i]\n    def union(self, i, j):\n        root_i = self.find(i)\n        root_j = self.find(j)\n        if root_i != root_j: self.parent[root_i] = root_j",
+    "新模板_388": "class DSU:\n    def __init__(self, n):\n        self.parent = list(range(n + 1))\n    def find(self, i):\n        if self.parent[i] == i: return i\n        self.parent[i] = self.find(self.parent[i])\n        return self.parent[i]\n    def union(self, i, j):\n        root_i = self.find(i)\n        root_j = self.find(j)\n        if root_i != root_j: self.parent[root_i] = root_j\n",
+    "新模板_137": "// 新代码"
+}
